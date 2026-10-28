@@ -1,0 +1,676 @@
+<html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>METHAGAZ — Service Provider Letter of Engagement · OECS Trading &amp; Investment Company LLC</title>
+<style>
+  :root{
+    --oecs-navy:#0b2545;
+    --oecs-blue:#13315c;
+    --oecs-teal:#1b998b;
+    --oecs-green:#2a9d8f;
+    --oecs-gold:#e9c46a;
+    --oecs-amber:#f4a261;
+    --oecs-coral:#e76f51;
+    --paper:#ffffff;
+    --ink:#1a1a1a;
+    --muted:#5a6472;
+    --line:#d8dee6;
+    --tint:#f4f8fb;
+    --tint-2:#eef6f4;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;background:#e9eef3;color:var(--ink);
+    font-family:"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    font-size:15px;line-height:1.55;}
+  .toolbar{
+    position:sticky;top:0;z-index:50;display:flex;flex-wrap:wrap;gap:8px;
+    justify-content:center;padding:10px 14px;background:var(--oecs-navy);
+    box-shadow:0 2px 10px rgba(0,0,0,.25);
+  }
+  .toolbar button{
+    cursor:pointer;border:none;border-radius:6px;padding:9px 16px;font-size:13px;
+    font-weight:600;letter-spacing:.02em;background:var(--oecs-gold);color:var(--oecs-navy);
+    transition:transform .12s ease,background .12s ease;
+  }
+  .toolbar button:hover{transform:translateY(-1px);background:#f2d27f;}
+  .toolbar button.secondary{background:var(--oecs-teal);color:#fff;}
+  .toolbar button.secondary:hover{background:#23b3a3;}
+  .toolbar button.ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.5);}
+  .toolbar button.ghost:hover{background:rgba(255,255,255,.12);}
+
+  .page{
+    max-width:980px;margin:26px auto 40px;background:var(--paper);
+    padding:46px 54px 54px;border-radius:4px;
+    box-shadow:0 6px 28px rgba(11,37,69,.16);
+  }
+  /* ---------- letterhead ---------- */
+  .letterhead{display:flex;justify-content:space-between;align-items:flex-start;
+    border-bottom:4px solid var(--oecs-teal);padding-bottom:16px;margin-bottom:8px;}
+  .brand-block{display:flex;gap:14px;align-items:center;}
+  .brand-mark{width:64px;height:64px;border-radius:10px;background:linear-gradient(135deg,var(--oecs-navy),var(--oecs-teal));
+    display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:15px;letter-spacing:.04em;text-align:center;line-height:1.1;}
+  .brand-name{font-size:19px;font-weight:800;color:var(--oecs-navy);letter-spacing:.01em;}
+  .brand-sub{font-size:12.5px;color:var(--muted);}
+  .doc-meta{text-align:right;font-size:12px;color:var(--muted);}
+  .doc-meta strong{display:block;color:var(--oecs-blue);font-size:13px;}
+  .ribbon{background:linear-gradient(90deg,var(--oecs-navy),var(--oecs-blue),var(--oecs-teal));
+    color:#fff;padding:12px 18px;border-radius:6px;margin:14px 0 26px;
+    display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;}
+  .ribbon .r-title{font-size:16px;font-weight:800;letter-spacing:.03em;}
+  .ribbon .r-tag{font-size:12.5px;opacity:.95;}
+
+  h1{font-size:22px;color:var(--oecs-navy);margin:0 0 4px;letter-spacing:.01em;}
+  h2{font-size:16px;color:#fff;background:var(--oecs-blue);padding:9px 14px;border-radius:5px;
+    margin:34px 0 14px;letter-spacing:.04em;text-transform:uppercase;}
+  h3{font-size:14.5px;color:var(--oecs-navy);margin:20px 0 8px;letter-spacing:.01em;}
+  h4{font-size:13px;color:var(--oecs-teal);margin:14px 0 6px;text-transform:uppercase;letter-spacing:.05em;}
+  p{margin:0 0 10px;}
+  ul,ol{margin:0 0 12px 20px;padding:0;}
+  li{margin-bottom:5px;}
+  .purpose{background:var(--tint);border-left:5px solid var(--oecs-teal);
+    padding:12px 16px;border-radius:0 5px 5px 0;font-size:13.5px;margin-bottom:18px;}
+  .purpose strong{color:var(--oecs-navy);}
+  .important{background:#fff4e6;border-left:5px solid var(--oecs-amber);
+    padding:12px 16px;border-radius:0 5px 5px 0;font-size:13.5px;margin-bottom:20px;}
+  .important strong{color:#8a4b00;}
+
+  table{width:100%;border-collapse:collapse;margin:10px 0 18px;font-size:13.5px;}
+  th{background:var(--oecs-navy);color:#fff;text-align:left;padding:9px 11px;font-weight:600;letter-spacing:.02em;}
+  td{padding:9px 11px;border-bottom:1px solid var(--line);vertical-align:top;}
+  tr:nth-child(even) td{background:var(--tint);}
+  table.kv td:first-child{width:30%;font-weight:600;color:var(--oecs-blue);background:var(--tint);}
+  table.kv tr:nth-child(even) td{background:#fff;}
+  table.kv tr:nth-child(even) td:first-child{background:var(--tint);}
+  .total-row td{background:var(--oecs-teal)!important;color:#fff;font-weight:800;font-size:14.5px;}
+  .subtotal td{background:#dcefeb!important;color:var(--oecs-navy);font-weight:700;}
+
+  .callout{background:var(--tint-2);border:1px solid #bfe0da;border-radius:6px;padding:14px 18px;margin:14px 0;font-size:13.5px;}
+  .callout.gold{background:#fdf6e3;border-color:#f0dca8;}
+  .callout.coral{background:#fdeee9;border-color:#f2c4b5;}
+
+  .declaration-list{list-style:none;margin-left:0;}
+  .declaration-list li{padding-left:26px;position:relative;margin-bottom:9px;font-size:13.5px;}
+  .declaration-list li::before{content:"✔";position:absolute;left:0;top:0;color:var(--oecs-teal);font-weight:800;}
+
+  .sig-table td{height:38px;}
+
+  .small{font-size:12px;color:var(--muted);}
+  .page-break{page-break-before:always;break-before:page;}
+  .no-break{page-break-inside:avoid;break-inside:avoid;}
+
+  /* ---------- supporting docs ---------- */
+  .doc-section{background:#fbfdff;border:1px solid var(--line);border-radius:8px;padding:22px 26px;margin:18px 0;}
+  .doc-header{display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid var(--oecs-gold);
+    padding-bottom:8px;margin-bottom:14px;flex-wrap:wrap;gap:8px;}
+  .doc-header .dh-title{font-size:15px;font-weight:800;color:var(--oecs-navy);letter-spacing:.02em;}
+  .doc-header .dh-tag{font-size:11px;background:var(--oecs-gold);color:var(--oecs-navy);padding:3px 10px;border-radius:12px;font-weight:700;letter-spacing:.04em;}
+
+  /* workflow diagram */
+  .workflow{display:flex;flex-direction:column;gap:0;margin:16px 0;}
+  .wf-step{display:flex;gap:14px;align-items:flex-start;padding:10px 0;}
+  .wf-node{flex:0 0 46px;width:46px;height:46px;border-radius:50%;background:var(--oecs-navy);color:#fff;
+    display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px;}
+  .wf-node.teal{background:var(--oecs-teal);}
+  .wf-node.gold{background:var(--oecs-amber);color:var(--oecs-navy);}
+  .wf-node.green{background:var(--oecs-green);}
+  .wf-body{flex:1;background:#fff;border:1px solid var(--line);border-radius:6px;padding:10px 14px;}
+  .wf-body strong{color:var(--oecs-blue);}
+  .wf-connector{width:2px;height:14px;background:var(--oecs-teal);margin-left:22px;}
+
+  /* architecture diagram */
+  .arch{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:16px 0;}
+  .arch-layer{background:#fff;border:2px solid var(--oecs-teal);border-radius:8px;padding:12px;text-align:center;}
+  .arch-layer h5{margin:0 0 8px;font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--oecs-teal);}
+  .arch-layer ul{list-style:none;margin:0;padding:0;font-size:11.5px;text-align:left;}
+  .arch-layer li{padding:3px 0;border-bottom:1px dashed #e2e8ee;}
+  .arch-layer li:last-child{border-bottom:none;}
+  .arch-layer.layer-field{border-color:var(--oecs-coral);}
+  .arch-layer.layer-field h5{color:var(--oecs-coral);}
+  .arch-layer.layer-edge{border-color:var(--oecs-amber);}
+  .arch-layer.layer-edge h5{color:#b5651d;}
+  .arch-layer.layer-core{border-color:var(--oecs-blue);}
+  .arch-layer.layer-core h5{color:var(--oecs-blue);}
+  .arch-layer.layer-user{border-color:var(--oecs-green);}
+  .arch-layer.layer-user h5{color:var(--oecs-green);}
+  .arch-arrows{display:flex;justify-content:space-around;font-size:20px;color:var(--oecs-teal);margin:2px 0 10px;}
+
+  /* gantt */
+  .gantt{width:100%;border-collapse:collapse;font-size:12px;margin:12px 0;}
+  .gantt th{background:var(--oecs-blue);color:#fff;padding:6px;text-align:center;font-size:11px;}
+  .gantt td{padding:6px;border:1px solid var(--line);}
+  .gantt .bar{height:18px;border-radius:3px;}
+  .bar-m1{background:var(--oecs-teal);}
+  .bar-m2{background:var(--oecs-green);}
+  .bar-m3{background:var(--oecs-gold);}
+  .bar-m4{background:var(--oecs-amber);}
+  .bar-m5{background:var(--oecs-coral);}
+  .legend{display:flex;flex-wrap:wrap;gap:14px;font-size:11.5px;margin-top:8px;}
+  .legend span{display:flex;align-items:center;gap:5px;}
+  .legend i{width:14px;height:14px;border-radius:3px;display:inline-block;}
+
+  @media print{
+    body{background:#fff;font-size:11.5pt;}
+    .toolbar{display:none!important;}
+    .page{box-shadow:none;margin:0;padding:0;max-width:100%;border-radius:0;}
+    h2{background:var(--oecs-blue)!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+    th{background:var(--oecs-navy)!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+    .total-row td{background:var(--oecs-teal)!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+    .ribbon{background:var(--oecs-navy)!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+    .wf-node,.arch-layer,.bar,.doc-header .dh-tag,.subtotal td{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+    a{color:inherit;text-decoration:none;}
+    .no-print{display:none!important;}
+  }
+</style>
+</head>
+<body>
+
+<div class="toolbar no-print">
+  <button onclick="window.print()">🖨 Print / Save as PDF (Color Vivid)</button>
+  <button class="secondary" onclick="downloadHTML()">⬇ Download Full Package (HTML)</button>
+  <button class="ghost" onclick="downloadLetter()">⬇ Download Letter Only</button>
+  <button class="ghost" onclick="downloadTechnical()">⬇ Download Technical Annex</button>
+</div>
+
+<div class="page" id="package">
+
+  <!-- ================= LETTERHEAD ================= -->
+  <div class="letterhead">
+    <div class="brand-block">
+      <div class="brand-mark">OECS<br>TRADING</div>
+      <div>
+        <div class="brand-name">The OECS Trading &amp; Investment Company LLC</div>
+        <div class="brand-sub">Prime Technology Provider · Castries, Saint Lucia · GCFT dMRV Platform</div>
+      </div>
+    </div>
+    <div class="doc-meta">
+      <strong>Service Provider Letter of Engagement</strong>
+      CARIBEquity Conecta Caribbean<br>
+      Prototype Grant — Round 1<br>
+      Date: 28 October 2026
+    </div>
+  </div>
+
+  <div class="ribbon">
+    <div>
+      <div class="r-title">METHAGAZ · COSMOS SOLUTION</div>
+      <div class="r-tag">Bottled Biogas dMRV Prototype · Les Cayes, Haiti · Pre-MVP (Track A)</div>
+    </div>
+    <div style="text-align:right;">
+      <div class="r-title">USD $22,500</div>
+      <div class="r-tag">Digital &amp; data infrastructure scope</div>
+    </div>
+  </div>
+
+  <h1>Service Provider Letter of Engagement</h1>
+  <p class="small">To be completed and signed by the service provider — Submitted with the entrepreneur’s application.</p>
+
+  <div class="purpose">
+    <strong>Purpose of this letter:</strong> This letter is required as part of the CARIBEquity Conecta Caribbean Prototype Grant application. It confirms that you, as a service provider, are aware of the grant mechanism, have agreed to deliver a specific scope of work for the applying entrepreneur, and have provided a cost estimate that will be used in their budget proposal.
+  </div>
+  <div class="important">
+    <strong>Important:</strong> If your client (the entrepreneur) is selected, Bridge for Billions pays you directly, not the entrepreneur.
+  </div>
+
+  <!-- ================= 01 ================= -->
+  <h2>01 · Service Provider Details</h2>
+  <table class="kv">
+    <tbody><tr><td>Organisation / individual name</td><td><strong>The OECS Trading &amp; Investment Company LLC</strong> — Prime Technology Provider</td></tr>
+    <tr><td>Type of organisation</td><td>Private Limited Liability Company — technology integration, digital dMRV platform development, and data infrastructure</td></tr>
+    <tr><td>Country of registration / location</td><td>Saint Lucia (Castries)</td></tr>
+    <tr><td>Contact person (name and role)</td><td>To be provided by supplier upon engagement (Managing Director / Technical Lead)</td></tr>
+    <tr><td>Company Registration Number</td><td>To be provided by supplier (Saint Lucia company registration certificate to be attached)</td></tr>
+  </tbody></table>
+  <div class="callout gold no-break">
+    <strong>Note on sub-contracting and hardware.</strong> All physical hardware — cylinders, purification and filling-station equipment, pressure and flow sensors, safety fittings, and IoT gateways — will be procured from third-party suppliers under separate arrangements. The OECS Trading &amp; Investment Company LLC acts as the <strong>consolidated technical integrator and platform provider</strong>, not as a hardware vendor. Hardware costs are therefore excluded from this letter’s cost estimate (Section 04) and are shown only for budget-context transparency in the Technical Annex.
+  </div>
+
+  <!-- ================= 02 ================= -->
+  <h2>02 · Referring Entrepreneur</h2>
+  <table class="kv">
+    <tbody><tr><td>Entrepreneur / startup name</td><td><strong>COSMOS SOLUTION</strong> — Project METHAGAZ</td></tr>
+    <tr><td>Country</td><td>Haiti (Les Cayes, South Department)</td></tr>
+    <tr><td>CARIBEquity priority sector</td><td>Essential Infrastructure Services (Energy) — Climate Tech / Renewable Energy</td></tr>
+    <tr><td>Project stage</td><td>Pre-MVP (Track A)</td></tr>
+    <tr><td>Grant request (total)</td><td>USD $37,400 — disbursed directly to service providers</td></tr>
+    <tr><td>Prototype duration</td><td>6 months — December 2026 to May 2027</td></tr>
+  </tbody></table>
+
+  <!-- ================= 03 ================= -->
+  <h2>03 · Scope of Work</h2>
+  <p>Describe in detail the services you will provide to support the entrepreneur’s prototype development. Be specific about deliverables, format, and what the entrepreneur will receive at the end of your engagement.</p>
+
+  <table class="kv">
+    <tbody><tr>
+      <td>Type of service</td>
+      <td><strong>Total technology solution provider</strong> — dMRV platform integration, mobile application development, IoT data architecture, and digital system commissioning for the METHAGAZ bottled-biogas prototype.</td>
+    </tr>
+    <tr>
+      <td>Description of services</td>
+      <td>
+        <p>The OECS Trading &amp; Investment Company LLC will deliver the digital and data infrastructure required to operate and verify the METHAGAZ prototype: a biogas purification and cylinder-filling station serving low-income households and food vendors in Les Cayes. The engagement <strong>does not</strong> include the procurement or physical installation of tanks, sensors, cylinders, or filling-station hardware; those items are sourced from third-party suppliers. The OECS Trading &amp; Investment Company LLC’s scope is the <strong>software, data, and integration layer</strong> that connects field hardware to the GCFT dMRV backbone and the user-facing applications.</p>
+        <h4>Services include</h4>
+        <ol>
+          <li><strong>GCFT platform integration for METHAGAZ</strong> — Configuration of the GCFT dMRV backbone to ingest, validate, and ledger data from the METHAGAZ filling station and cylinder fleet. Includes API development for hardware-agnostic data ingestion (MQTT/REST), SHA-256 audit-trail configuration for cylinder fill/refill events, and carbon-accounting logic aligned with Gold Standard AMM v2.0 (methane avoidance + charcoal displacement pathways).</li>
+          <li><strong>Cylinder-fleet and station monitoring dashboard</strong> — A web-based operational dashboard for COSMOS SOLUTION to track cylinder fill levels, station throughput, safety parameters (pressure, leak detection), and tester-level consumption. The dashboard generates audit-ready reports for verification bodies and carbon registries.</li>
+          <li><strong>Mobile applications (iOS + Android)</strong> — Two user-facing interfaces:
+            <ul>
+              <li><em>Household / vendor app:</em> refill ordering, delivery tracking, cylinder-deposit management, and consumption history.</li>
+              <li><em>Station-operator app:</em> filling-station workflow support, safety-checklist logging, and cylinder status updates.</li>
+            </ul>
+          </li>
+          <li><strong>SMS/WhatsApp ordering and notification layer</strong> — Integration with Twilio or Meta Cloud API to enable low-bandwidth refill ordering, delivery confirmation, and safety alerts for testers without smartphone access.</li>
+          <li><strong>Data security, offline resilience, and interoperability</strong> — TLS 1.3 in transit and AES-256 at rest; local buffering logic to survive Haiti’s intermittent connectivity; JSON schema documentation so sensor data from third-party hardware flows correctly into GCFT.</li>
+          <li><strong>Technical documentation and handover</strong> — API documentation, operational runbooks, data schema definitions, and a commissioning report confirming that the digital platform is live and audit-ready.</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td>Key deliverable(s)</td>
+      <td>
+        <ul>
+          <li><strong>GCFT–METHAGAZ integration live</strong> — API bridge operational; cylinder fill/refill events recorded with SHA-256 audit trail; carbon-calculation engine configured for METHAGAZ’s two emission-reduction pathways.</li>
+          <li><strong>Station operations dashboard</strong> — Deployed and tested with at least one filling-station operator; dashboard reflects live or simulated station data and produces a sample audit report.</li>
+          <li><strong>Mobile apps on TestFlight and Google Play</strong> — household/vendor app functional for ordering and tracking; station-operator app functional for fill logging and safety checks.</li>
+          <li><strong>SMS/WhatsApp ordering layer operational</strong> — end-to-end refill request → distributor notification → delivery confirmation tested with pilot users.</li>
+          <li><strong>Source code and documentation handover</strong> — app codebase, GCFT integration documentation, data schema, and operational runbooks delivered to COSMOS SOLUTION and Bridge for Billions.</li>
+          <li><strong>Digital commissioning report</strong> — confirmation that the platform is stable, data flows are verified, and the dMRV audit trail is ready for third-party review.</li>
+        </ul>
+      </td>
+    </tr>
+  </tbody></table>
+
+  <!-- ================= 04 ================= -->
+  <h2>04 · Cost Estimate</h2>
+  <table class="kv">
+    <tbody><tr><td>Estimated total cost (USD)</td><td><strong>USD $22,500</strong></td></tr>
+    <tr><td>Basis for cost estimate</td><td>
+      ☐ Day rate (____ days × USD ____/day) &nbsp;&nbsp; ☐ Fixed project fee &nbsp;&nbsp; <strong>☒ Milestone-based (describe below)</strong> &nbsp;&nbsp; ☐ Other
+    </td></tr>
+  </tbody></table>
+
+  <table>
+    <thead>
+      <tr><th style="width:9%;">Milestone</th><th>Description</th><th style="width:16%;text-align:right;">Amount (USD)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>M1</strong></td><td>GCFT platform configuration — API development, SHA-256 audit trail, carbon-calculation logic for METHAGAZ pathways</td><td style="text-align:right;">$6,500</td></tr>
+      <tr><td><strong>M2</strong></td><td>Station operations dashboard — cylinder-fleet tracking, safety parameters, audit-report generation</td><td style="text-align:right;">$4,000</td></tr>
+      <tr><td><strong>M3</strong></td><td>Mobile app development — household/vendor app + station-operator app (iOS + Android)</td><td style="text-align:right;">$7,500</td></tr>
+      <tr><td><strong>M4</strong></td><td>SMS/WhatsApp ordering integration — Twilio/Meta Cloud API, two-way messaging, delivery confirmation</td><td style="text-align:right;">$2,000</td></tr>
+      <tr><td><strong>M5</strong></td><td>System integration testing, commissioning, and handover — end-to-end validation, documentation, source-code transfer</td><td style="text-align:right;">$2,500</td></tr>
+      <tr class="total-row"><td colspan="2">TOTAL — Service Provider Cost</td><td style="text-align:right;">$22,500</td></tr>
+    </tbody>
+  </table>
+
+  <table class="kv">
+    <tbody><tr><td>Currency of invoicing</td><td><strong>USD</strong> &nbsp;&nbsp; ☐ Other: ________________</td></tr>
+  </tbody></table>
+
+  <div class="callout">
+    <strong>Budget context.</strong> The METHAGAZ prototype has a total grant request of <strong>USD $37,400</strong>. The OECS Trading &amp; Investment Company LLC’s fee of <strong>$22,500</strong> covers the digital infrastructure and integration work. The remaining <strong>~$14,900</strong> is allocated to third-party hardware procurement (cylinders, purification/filling-station equipment, safety fittings) and field logistics, which are outside this letter’s scope.
+  </div>
+
+  <div class="important">
+    <strong>Payment mechanism reminder:</strong> If the entrepreneur is selected, Bridge for Billions pays you directly upon their notification and your invoice. You will <strong>NOT</strong> receive payment from the entrepreneur. The entrepreneur will <strong>NOT</strong> handle any funds from this grant.
+  </div>
+
+  <!-- ================= 05 ================= -->
+  <h2>05 · Availability Confirmation</h2>
+  <p>Available to begin work:</p>
+  <ul>
+    <li>☒ Yes — I am available to begin as early as <strong>December 2026</strong></li>
+    <li>☐ Yes — but earliest start date: ________________</li>
+    <li>☐ Subject to confirmation closer to the date</li>
+    <li>☐ No — please explain: __________________________________________________</li>
+  </ul>
+
+  <!-- ================= 06 ================= -->
+  <h2>06 · Declarations</h2>
+  <p>By signing this letter, I / we confirm the following:</p>
+  <ul class="declaration-list">
+    <li>I am the authorised representative of the organisation or individual named in Section 01.</li>
+    <li>The cost estimate provided in Section 04 is accurate and reflects the actual cost of the services described, exclusive of third-party hardware procurement.</li>
+    <li>I understand that this letter does not constitute a contract and does not guarantee that the entrepreneur will be selected for a grant.</li>
+    <li>If the entrepreneur is selected, I commit to entering into a formal service agreement with Bridge for Billions before receiving any payment.</li>
+    <li>I understand that payment will be made directly by Bridge for Billions to my account upon the entrepreneur’s notification and submission of an invoice, not by the entrepreneur.</li>
+    <li>I confirm that I am not a family member, co-founder, or business partner of the applying entrepreneur in a way that would constitute a conflict of interest.</li>
+    <li>I confirm that the services described are not overhead costs (salaries of existing staff, office rent, general operating costs), which are ineligible under this grant.</li>
+    <li>I confirm that hardware procurement and physical installation are <strong>not</strong> included in this scope and will be contracted separately by COSMOS SOLUTION through third-party suppliers.</li>
+  </ul>
+
+  <!-- ================= 07 ================= -->
+  <h2>07 · Signature</h2>
+  <table class="sig-table">
+    <tbody><tr><td style="width:28%;font-weight:600;color:var(--oecs-blue);background:var(--tint);">Full name</td><td></td></tr>
+    <tr><td style="font-weight:600;color:var(--oecs-blue);background:var(--tint);">Role / title</td><td></td></tr>
+    <tr><td style="font-weight:600;color:var(--oecs-blue);background:var(--tint);">Signature</td><td></td></tr>
+    <tr><td style="font-weight:600;color:var(--oecs-blue);background:var(--tint);">Date</td><td></td></tr>
+    <tr><td style="font-weight:600;color:var(--oecs-blue);background:var(--tint);">Official stamp (if applicable)</td><td></td></tr>
+    <tr><td style="font-weight:600;color:var(--oecs-blue);background:var(--tint);">Signed on behalf of</td><td><strong>The OECS Trading &amp; Investment Company LLC</strong></td></tr>
+  </tbody></table>
+
+  <div class="callout">
+    <strong>How to submit this letter.</strong> Once signed, provide this letter to the entrepreneur applying for the CARIBEquity Prototype Grant. One letter is required per service provider. Attach your company registration certificate. Application deadline: <strong>October 30, 2026 at 23:59 Eastern Caribbean Time.</strong> Questions: prototype@bridgeforbillions.org
+  </div>
+
+  <!-- ================= TECHNICAL ANNEX ================= -->
+  <div class="page-break"></div>
+
+  <div style="text-align:center;margin-bottom:22px;">
+    <div style="display:inline-block;background:var(--oecs-navy);color:#fff;padding:10px 26px;border-radius:30px;font-weight:800;letter-spacing:.08em;font-size:14px;">TECHNICAL ANNEX — SUPPORTING DOCUMENTS</div>
+    <p class="small" style="margin-top:8px;">Attached to the Service Provider Letter of Engagement · METHAGAZ · The OECS Trading &amp; Investment Company LLC</p>
+  </div>
+
+  <!-- ===== ANNEX A: Concept ===== -->
+  <div class="doc-section no-break">
+    <div class="doc-header">
+      <div class="dh-title">Annex A — METHAGAZ Concept &amp; Service Model</div>
+      <div class="dh-tag">CONCEPT</div>
+    </div>
+    <p>METHAGAZ is COSMOS SOLUTION’s bottled-biogas product: market organic waste is converted in existing digesters, purified at a small station, filled into certified refillable cylinders, and delivered to families and food vendors who lack space for a digester. It is a distinct product from COSMOS SOLUTION’s installed-digester line — different customer, different product, different revenue model (pay-per-refill with cylinder deposit).</p>
+
+    <table>
+      <thead><tr><th>Dimension</th><th>COSMOS today: the digester</th><th>New: METHAGAZ</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Product</strong></td><td>Digester installed at the customer’s premises</td><td>Gas delivered in refillable cylinders</td></tr>
+        <tr><td><strong>Customer</strong></td><td>Household with space and waste that purchases a digester</td><td>Family or vendor without a digester who purchases a refill</td></tr>
+        <tr><td><strong>Gas use</strong></td><td>On site, next to the digester</td><td>Anywhere, transported in a cylinder</td></tr>
+        <tr><td><strong>Equipment</strong></td><td>Digester</td><td>Purification and filling station</td></tr>
+        <tr><td><strong>Revenue model</strong></td><td>Sale and installation</td><td>Pay-per-refill, with cylinder deposit</td></tr>
+        <tr><td><strong>Revenue to date</strong></td><td>Yes</td><td>None — pre-MVP</td></tr>
+      </tbody>
+    </table>
+
+    <h4>Prototype objectives (six months)</h4>
+    <ol>
+      <li>Demonstrate that biogas cylinders can be filled <strong>safely</strong>.</li>
+      <li>Demonstrate that a single digester supplies enough gas for a <strong>regular service</strong>.</li>
+      <li>Demonstrate that families <strong>adopt the cylinder</strong> at a price they can afford.</li>
+    </ol>
+
+    <h4>Direct beneficiaries</h4>
+    <table>
+      <thead><tr><th>Beneficiaries</th><th>Number</th><th>Profile</th></tr></thead>
+      <tbody>
+        <tr><td>Testing households</td><td>15</td><td>Low-income families in Les Cayes who cook with charcoal</td></tr>
+        <tr><td>Food vendors</td><td>5</td><td>Micro-entrepreneurs who cook every day for their business</td></tr>
+        <tr><td>Trained operators</td><td>4</td><td>Including at least 2 women, trained in safe filling procedures</td></tr>
+      </tbody>
+    </table>
+
+    <h4>Expected results at six months</h4>
+    <table>
+      <thead><tr><th>Result</th><th>Target</th></tr></thead>
+      <tbody>
+        <tr><td>Filling station in operation in Les Cayes</td><td>1</td></tr>
+        <tr><td>Refills delivered to testers</td><td>At least 150</td></tr>
+        <tr><td>Testers still active at the end of the test</td><td>At least 70%</td></tr>
+        <tr><td>Women among testers</td><td>At least 60%</td></tr>
+        <tr><td>Reduction in charcoal purchases among testers</td><td>At least 25%</td></tr>
+        <tr><td>Safety incidents</td><td>0</td></tr>
+        <tr><td>Refill price validated with users</td><td>Yes</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ===== ANNEX B: System Architecture ===== -->
+  <div class="doc-section no-break">
+    <div class="doc-header">
+      <div class="dh-title">Annex B — System Architecture &amp; Data Flow</div>
+      <div class="dh-tag">ARCHITECTURE</div>
+    </div>
+    <p>The METHAGAZ digital platform is a four-layer architecture. Field hardware is procured from third-party suppliers; the OECS Trading &amp; Investment Company LLC builds and integrates the edge, core, and user layers.</p>
+
+    <div class="arch">
+      <div class="arch-layer layer-field">
+        <h5>① Field Layer</h5>
+        <ul>
+          <li>Filling-station pressure &amp; flow sensors</li>
+          <li>Cylinder weight/level sensors</li>
+          <li>Leak &amp; safety detectors</li>
+          <li>Gas-quality analyser</li>
+          <li>IoT gateway (ESP32 / LTE)</li>
+        </ul>
+      </div>
+      <div class="arch-layer layer-edge">
+        <h5>② Edge Layer</h5>
+        <ul>
+          <li>Local buffering (offline-first)</li>
+          <li>MQTT broker</li>
+          <li>Data normalisation</li>
+          <li>TLS 1.3 encryption</li>
+          <li>Device provisioning</li>
+        </ul>
+      </div>
+      <div class="arch-layer layer-core">
+        <h5>③ Core Layer — GCFT dMRV</h5>
+        <ul>
+          <li>REST/MQTT ingestion API</li>
+          <li>SHA-256 audit ledger</li>
+          <li>Carbon-calculation engine</li>
+          <li>Gold Standard AMM v2.0 logic</li>
+          <li>Audit-report generator</li>
+        </ul>
+      </div>
+      <div class="arch-layer layer-user">
+        <h5>④ User Layer</h5>
+        <ul>
+          <li>Household / vendor app</li>
+          <li>Station-operator app</li>
+          <li>Operations dashboard</li>
+          <li>SMS/WhatsApp gateway</li>
+          <li>Verifier / registry exports</li>
+        </ul>
+      </div>
+    </div>
+    <div class="arch-arrows" aria-hidden="true">
+      <span>⟶</span><span>⟶</span><span>⟶</span>
+    </div>
+    <p class="small" style="text-align:center;">Data flows left → right. Field hardware (third-party) → edge buffering → GCFT core → user interfaces. All data at rest is AES-256 encrypted; all data in transit is TLS 1.3.</p>
+
+    <h4>Data-flow specification</h4>
+    <table>
+      <thead><tr><th>Stage</th><th>Input</th><th>Processing</th><th>Output</th></tr></thead>
+      <tbody>
+        <tr><td>Capture</td><td>Sensor readings (pressure, weight, gas quality, leak status)</td><td>Edge normalisation; timestamping</td><td>Structured MQTT message</td></tr>
+        <tr><td>Ingestion</td><td>MQTT/REST payload</td><td>Schema validation; deduplication</td><td>Validated record in GCFT</td></tr>
+        <tr><td>Ledgering</td><td>Validated fill/refill event</td><td>SHA-256 hash; chain append</td><td>Immutable audit entry</td></tr>
+        <tr><td>Carbon logic</td><td>Gas volume, cylinder ID, customer ID</td><td>AMM v2.0 emission-reduction calculation</td><td>Verified carbon-credit estimate</td></tr>
+        <tr><td>Presentation</td><td>Ledger + carbon records</td><td>Dashboard aggregation; app queries</td><td>User dashboards, audit reports, registry exports</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ===== ANNEX C: Operational Workflow ===== -->
+  <div class="doc-section no-break">
+    <div class="doc-header">
+      <div class="dh-title">Annex C — Cylinder Fill / Refill Operational Workflow</div>
+      <div class="dh-tag">WORKFLOW</div>
+    </div>
+    <p>End-to-end digital workflow for a single refill cycle, showing where the OECS Trading &amp; Investment Company LLC platform intervenes.</p>
+
+    <div class="workflow">
+      <div class="wf-step">
+        <div class="wf-node">1</div>
+        <div class="wf-body"><strong>Order placed.</strong> Household or vendor orders a refill via the mobile app or SMS/WhatsApp. The platform records customer ID, cylinder ID, and delivery address.</div>
+      </div>
+      <div class="wf-connector"></div>
+      <div class="wf-step">
+        <div class="wf-node teal">2</div>
+        <div class="wf-body"><strong>Order queued &amp; routed.</strong> The operations dashboard queues the order and routes it to the filling station. Station operator receives a fill instruction in the station-operator app.</div>
+      </div>
+      <div class="wf-connector"></div>
+      <div class="wf-step">
+        <div class="wf-node gold">3</div>
+        <div class="wf-body"><strong>Safe fill.</strong> Operator fills the cylinder. Third-party pressure/flow/weight sensors capture the fill event. The station-operator app logs the safety checklist. The IoT gateway transmits the fill record to GCFT.</div>
+      </div>
+      <div class="wf-connector"></div>
+      <div class="wf-step">
+        <div class="wf-node green">4</div>
+        <div class="wf-body"><strong>Ledger &amp; carbon calculation.</strong> GCFT validates the fill record, appends a SHA-256 audit entry, and calculates the emission reduction (methane avoided + charcoal displaced) under AMM v2.0 logic.</div>
+      </div>
+      <div class="wf-connector"></div>
+      <div class="wf-step">
+        <div class="wf-node">5</div>
+        <div class="wf-body"><strong>Delivery &amp; confirmation.</strong> Cylinder is delivered. Customer confirms receipt in the app or via SMS. Platform updates cylinder status and consumption history.</div>
+      </div>
+      <div class="wf-connector"></div>
+      <div class="wf-step">
+        <div class="wf-node teal">6</div>
+        <div class="wf-body"><strong>Audit &amp; reporting.</strong> Dashboard generates an audit-ready report for verifiers and carbon registries. Operations team reviews throughput, safety, and consumption analytics.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== ANNEX D: Milestone Schedule ===== -->
+  <div class="doc-section no-break">
+    <div class="doc-header">
+      <div class="dh-title">Annex D — Milestone Schedule (Dec 2026 – May 2027)</div>
+      <div class="dh-tag">TIMELINE</div>
+    </div>
+    <table class="gantt">
+      <thead>
+        <tr>
+          <th style="width:22%;">Milestone</th>
+          <th>Dec 2026</th><th>Jan 2027</th><th>Feb 2027</th><th>Mar 2027</th><th>Apr 2027</th><th>May 2027</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>M1</strong> GCFT integration</td><td><div class="bar bar-m1"></div></td><td><div class="bar bar-m1"></div></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td><strong>M2</strong> Ops dashboard</td><td></td><td><div class="bar bar-m2"></div></td><td><div class="bar bar-m2"></div></td><td></td><td></td><td></td></tr>
+        <tr><td><strong>M3</strong> Mobile apps</td><td></td><td><div class="bar bar-m3"></div></td><td><div class="bar bar-m3"></div></td><td><div class="bar bar-m3"></div></td><td></td><td></td></tr>
+        <tr><td><strong>M4</strong> SMS/WhatsApp layer</td><td></td><td></td><td><div class="bar bar-m4"></div></td><td><div class="bar bar-m4"></div></td><td></td><td></td></tr>
+        <tr><td><strong>M5</strong> Integration &amp; handover</td><td></td><td></td><td></td><td><div class="bar bar-m5"></div></td><td><div class="bar bar-m5"></div></td><td><div class="bar bar-m5"></div></td></tr>
+        <tr><td><em>Station construction (third-party)</em></td><td></td><td><div class="bar" style="background:#c9d6e2;"></div></td><td><div class="bar" style="background:#c9d6e2;"></div></td><td><div class="bar" style="background:#c9d6e2;"></div></td><td></td><td></td></tr>
+        <tr><td><em>Field testing (8 weeks)</em></td><td></td><td></td><td></td><td></td><td><div class="bar" style="background:#b8c4ce;"></div></td><td><div class="bar" style="background:#b8c4ce;"></div></td></tr>
+      </tbody>
+    </table>
+    <div class="legend">
+      <span><i class="bar-m1"></i> M1 — GCFT platform</span>
+      <span><i class="bar-m2"></i> M2 — Dashboard</span>
+      <span><i class="bar-m3"></i> M3 — Mobile apps</span>
+      <span><i class="bar-m4"></i> M4 — SMS/WhatsApp</span>
+      <span><i class="bar-m5"></i> M5 — Integration &amp; handover</span>
+      <span><i style="background:#c9d6e2;"></i> Third-party construction</span>
+      <span><i style="background:#b8c4ce;"></i> Field testing</span>
+    </div>
+  </div>
+
+  <!-- ===== ANNEX E: Payment & Hardware ===== -->
+  <div class="doc-section no-break">
+    <div class="doc-header">
+      <div class="dh-title">Annex E — Payment Schedule &amp; Hardware Budget Context</div>
+      <div class="dh-tag">FINANCE</div>
+    </div>
+    <h4>Milestone payment schedule (OECS Trading &amp; Investment Company LLC)</h4>
+    <table>
+      <thead><tr><th>Milestone</th><th>Deliverable trigger</th><th style="text-align:right;">Amount (USD)</th><th style="text-align:right;">Cumulative</th></tr></thead>
+      <tbody>
+        <tr><td>M1</td><td>GCFT–METHAGAZ API bridge live; audit ledger operational</td><td style="text-align:right;">$6,500</td><td style="text-align:right;">$6,500</td></tr>
+        <tr><td>M2</td><td>Operations dashboard deployed and tested</td><td style="text-align:right;">$4,000</td><td style="text-align:right;">$10,500</td></tr>
+        <tr><td>M3</td><td>Both mobile apps on TestFlight / Google Play</td><td style="text-align:right;">$7,500</td><td style="text-align:right;">$18,000</td></tr>
+        <tr><td>M4</td><td>SMS/WhatsApp ordering verified end-to-end</td><td style="text-align:right;">$2,000</td><td style="text-align:right;">$20,000</td></tr>
+        <tr><td>M5</td><td>Commissioning report + source-code handover</td><td style="text-align:right;">$2,500</td><td style="text-align:right;">$22,500</td></tr>
+        <tr class="subtotal"><td colspan="2">Total — OECS Trading (digital scope)</td><td style="text-align:right;">$22,500</td><td style="text-align:right;">$22,500</td></tr>
+      </tbody>
+    </table>
+
+    <h4>Indicative hardware budget (third-party, outside this letter)</h4>
+    <table>
+      <thead><tr><th>Item</th><th>Indicative cost (USD)</th><th>Procurement route</th></tr></thead>
+      <tbody>
+        <tr><td>Refillable biogas cylinders (pilot fleet) + safety fittings</td><td>$4,200</td><td>Third-party supplier</td></tr>
+        <tr><td>Purification / filling-station equipment</td><td>$6,800</td><td>Third-party supplier</td></tr>
+        <tr><td>Pressure, flow, weight &amp; leak sensors + IoT gateway</td><td>$2,400</td><td>Third-party supplier</td></tr>
+        <tr><td>Field logistics, duty, and installation materials</td><td>$1,500</td><td>COSMOS SOLUTION</td></tr>
+        <tr class="subtotal"><td>Indicative hardware subtotal</td><td>$14,900</td><td></td></tr>
+        <tr class="total-row"><td>Combined prototype budget (digital + hardware)</td><td>$37,400</td><td></td></tr>
+      </tbody>
+    </table>
+    <p class="small">Hardware figures are indicative for budget-context transparency only and are not part of this letter’s cost estimate. All hardware will be procured by COSMOS SOLUTION from third-party suppliers under separate arrangements; the OECS Trading &amp; Investment Company LLC does not procure or resell hardware.</p>
+  </div>
+
+  <!-- ===== ANNEX F: Alignment with METHAGAZ / BiogasHAITI platform ===== -->
+  <div class="doc-section no-break">
+    <div class="doc-header">
+      <div class="dh-title">Annex F — Alignment with METHAGAZ Proposal &amp; BiogasHAITI Platform</div>
+      <div class="dh-tag">ALIGNMENT</div>
+    </div>
+    <p>This engagement is structured so that the digital scope maps directly onto the METHAGAZ prototype objectives and the public BiogasHAITI platform page (oecstrading.github.io/Biogashaiti/).</p>
+    <table>
+      <thead><tr><th>METHAGAZ objective</th><th>Platform component</th><th>Engagement milestone</th></tr></thead>
+      <tbody>
+        <tr><td>Safe cylinder filling demonstrated</td><td>Station-operator app + safety-parameter dashboard + SHA-256 fill ledger</td><td>M1, M2, M3</td></tr>
+        <tr><td>Single digester supplies regular service</td><td>Station throughput analytics + consumption tracking</td><td>M2, M4</td></tr>
+        <tr><td>Families adopt the cylinder at affordable price</td><td>Household/vendor app + SMS/WhatsApp ordering + refill-price validation data</td><td>M3, M4</td></tr>
+        <tr><td>≥150 refills delivered; ≥70% testers active</td><td>Order/delivery tracking + active-tester analytics</td><td>M2, M3, M4</td></tr>
+        <tr><td>≥60% women among testers</td><td>User-registration data capture (optional gender field) in app and SMS flows</td><td>M3, M4</td></tr>
+        <tr><td>≥25% reduction in charcoal purchases</td><td>Consumption-history and displacement-calculation module</td><td>M1, M2</td></tr>
+        <tr><td>Zero safety incidents</td><td>Leak-detection alerts + safety-checklist logging</td><td>M1, M2, M3</td></tr>
+      </tbody>
+    </table>
+    <div class="callout">
+      <strong>Recommended updates to the BiogasHAITI HTML page:</strong> (1) rebrand header to METHAGAZ with the COSMOS SOLUTION × GCFT lockup; (2) change the Phase 1 snapshot from household digester units to “1 filling station + 15 testing households + 5 food vendors”; (3) name The OECS Trading &amp; Investment Company LLC as Prime Technology Provider and state that hardware is third-party procured; (4) update the use-of-funds chart to $22,500 digital / $14,900 hardware of the $37,400 total; (5) replace the household tank specification table with the Annex B architecture and Annex C workflow.
+    </div>
+  </div>
+
+  <p class="small" style="text-align:center;margin-top:30px;">— End of Service Provider Letter and Technical Annex —</p>
+
+</div>
+
+<script>
+function downloadHTML(){
+  const html = document.documentElement.outerHTML;
+  const blob = new Blob([html], {type:'text/html'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'METHAGAZ_Service_Provider_Letter_OECS_Trading_Full_Package.html';
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+function extractSection(startMarker, endMarker){
+  const nodes = document.querySelectorAll('.page > *');
+  let out = '', capture = false;
+  nodes.forEach(n=>{
+    if(n.textContent && n.textContent.includes(startMarker)) capture = true;
+    if(capture) out += n.outerHTML;
+    if(capture && endMarker && n.textContent && n.textContent.includes(endMarker) && !n.textContent.includes(startMarker)) capture = false;
+  });
+  return out;
+}
+function downloadLetter(){
+  const header = document.querySelector('.letterhead').outerHTML + document.querySelector('.ribbon').outerHTML;
+  const letterNodes = document.querySelectorAll('.page > *');
+  let out = '', stop = false;
+  letterNodes.forEach(n=>{
+    if(n.classList.contains('page-break')) stop = true;
+    if(!stop) out += n.outerHTML;
+  });
+  const doc = '<!DOCTYPE html><html><head><meta charset="UTF-8"><title>METHAGAZ Service Provider Letter</title><style>'+
+    document.querySelector('style').textContent+'</style></head><body><div class="page">'+out+'</div></body></html>';
+  const blob = new Blob([doc], {type:'text/html'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'METHAGAZ_Service_Provider_Letter_OECS_Trading.html';
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+function downloadTechnical(){
+  const sections = document.querySelectorAll('.doc-section, .page-break');
+  let out = '';
+  document.querySelectorAll('.page-break, .doc-section').forEach(n=>{ out += n.outerHTML; });
+  const doc = '<!DOCTYPE html><html><head><meta charset="UTF-8"><title>METHAGAZ Technical Annex</title><style>'+
+    document.querySelector('style').textContent+'</style></head><body><div class="page">'+
+    '<h1 style="text-align:center;color:#0b2545;">METHAGAZ — Technical Annex</h1>'+
+    '<p style="text-align:center;color:#5a6472;">Supporting documents to the Service Provider Letter of Engagement · The OECS Trading &amp; Investment Company LLC</p>'+
+    out+'</div></body></html>';
+  const blob = new Blob([doc], {type:'text/html'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'METHAGAZ_Technical_Annex_OECS_Trading.html';
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+</script>
+
+</body></html>
